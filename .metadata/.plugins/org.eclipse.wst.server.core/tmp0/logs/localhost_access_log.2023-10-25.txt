@@ -1,0 +1,2 @@
+127.0.0.1 - - [25/Oct/2023:12:09:37 -0500] "GET /cmpsWeb/student/concentrations HTTP/1.1" 200 6674
+127.0.0.1 - - [25/Oct/2023:12:09:37 -0500] "GET /cmpsWeb/student/getStudentDetail?uNumber=U01996353 HTTP/1.1" 200 698

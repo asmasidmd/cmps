@@ -1,0 +1,38 @@
+.logopart {
+    width: 100%;
+    display: flex;
+    padding-left: 500px;
+    text-align: center;
+    margin-top: 10px;
+    position: absolute;
+    line-height: 45px;
+  }
+
+  .logohead {
+    width: 100%;
+    color: rgba(0, 23, 56, 0.9);
+    font-size: 32px;
+    font-weight: 400;
+    line-height: 24px;
+    font-weight: bold;
+    line-height: 35px;
+  }
+
+  .logotext {
+    width: 100%;
+    color: #d9d6d6;
+    font-size: 22px;
+    font-weight: 400;
+    line-height: 12px;
+    font-weight: bold;
+  }
+
+  .logobottom {
+    width: 100%;
+    color: rgba(0, 23, 56, 0.9);
+
+    font-size: 15px;
+    font-weight: 400;
+    line-height: 19px;
+    font-weight: bold;
+  }

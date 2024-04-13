@@ -1,0 +1,12 @@
+package com.southern.cmps.domain;
+
+import java.util.Map;
+
+public class StudentBalanceSheetInfo {
+
+	private String uNumber;
+	private String firstName;
+	private String lastName;
+	private Map<Integer, Concentration> concentrationsInfo;
+	
+}

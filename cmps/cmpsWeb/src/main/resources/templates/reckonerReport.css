@@ -1,0 +1,151 @@
+<style type="text/css">
+ 
+
+      * {
+         box-sizing: border-box;
+      }
+      
+      @page {
+         size: A4;
+      }
+
+      @page :left {
+         margin-left: 1cm;
+      }
+
+      @page :right {
+         margin-right: 1cm;
+      }
+
+      h1,
+      h2,
+      h3,
+      h4,
+      h5 {
+         page-break-after: avoid;
+      }
+
+      table,
+      figure {
+         page-break-inside: avoid;
+      }
+
+      html,
+      body {
+         color: #333;
+         font-family: 'Roboto', sans-serif;
+      }
+
+      .header {
+         display: block;
+         padding-top: 12pt; 
+         padding-bottom: 12pt;       
+         width: 100%;
+        
+      }
+
+      .row {
+         margin: 0pt;
+      }
+      
+      
+
+      hr {
+         margin-top: 8pt;
+         margin-bottom: 12pt;
+         border: 0;
+         border-top: 1px solid #B9B9B9;
+      }
+
+      table {
+         border-collapse: collapse;
+         width: 100%;
+         margin-bottom: 10pt;
+         font-size: 8pt;
+         font-weight: 300;        
+         background-color: #FFFFFF;
+         border: 1px solid #DDDDDD;
+         word-wrap: break-word;
+      }
+      
+      .fix-table-layout{
+		table-layout:fixed;
+      }
+
+      .table-head>.title {
+         padding: 0pt;
+         text-align: left;
+         font-weight: 300;
+         color: #6C757D;
+      }
+
+      .table-head>.content {
+         padding: 0pt;
+         text-align: left;
+         font-weight: 400;
+      }
+
+      .table-head>.parameter {
+         text-align: left;
+         word-break: normal;
+         width: 14.5%;
+      }
+
+      table .title {
+         font-weight: 500;
+         padding-top: 8pt;
+         padding-left: 5pt;
+         margin-bottom: 0pt;
+         font-size: 8pt;
+      }
+
+      table tr td {
+         width: 16.5%;
+         padding-top: 6pt;
+         padding-bottom: 4pt;
+         padding-left: 9pt;
+         padding-right: 9pt;
+         vertical-align: top;
+         border: none;
+         text-align: left;
+      }
+
+      header {
+         margin-left: 8pt;
+      }
+
+      p {
+         color: #343A40;
+      }
+
+      .cards:first {
+         border: none
+      }
+
+      .graph-container {
+         display: block;
+         width: 100%
+         margin-top: -9pt;
+         margin-bottom: -10pt;
+      }
+     
+      .graph-container h2 {
+         width: 28%;
+         display: inline-block;
+         font-size: 12pt;
+         
+         
+      }
+
+      .graph-container .value-color {
+         display: inline-block;
+         background-color: #D7F0EA;
+         width: 18%;
+         margin: 0px;
+         font-size: 10pt;
+         text-align: center;
+         line-height: 17pt;
+      }
+           
+	 ol li {margin-bottom:10pt ; font-size:10pt;}
+</style> 

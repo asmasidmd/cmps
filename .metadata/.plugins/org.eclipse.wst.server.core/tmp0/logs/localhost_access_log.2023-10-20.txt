@@ -1,0 +1,5 @@
+127.0.0.1 - - [20/Oct/2023:10:53:58 -0500] "GET /cmpsWeb/student/getStudentDetail?uNumber=U01996353 HTTP/1.1" 200 361
+127.0.0.1 - - [20/Oct/2023:10:54:29 -0500] "GET /cmpsWeb/student/getStudentDetail?uNumber=U01996353 HTTP/1.1" 200 361
+127.0.0.1 - - [20/Oct/2023:11:01:27 -0500] "GET /cmpsWeb/WEB-INF/classes/com/southern/cmps/main/CmpsApplication.java HTTP/1.1" 404 682
+127.0.0.1 - - [20/Oct/2023:11:01:32 -0500] "GET /cmpsWeb/student/getStudentDetail?uNumber=U01996353 HTTP/1.1" 200 361
+127.0.0.1 - - [20/Oct/2023:14:39:15 -0500] "GET /cmpsWeb/student/getStudentDetail?uNumber=U01996353 HTTP/1.1" 200 361

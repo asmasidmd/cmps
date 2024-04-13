@@ -1,0 +1,5 @@
+package com.southern.cmps.domain;
+
+public class StudentBalanceSheetInfo {
+
+}

@@ -1,0 +1,154 @@
+package com.southern.cmps.service.impl;
+
+import java.io.File;
+import java.io.FileOutputStream;
+import java.io.OutputStream;
+import java.io.StringWriter;
+import java.nio.file.Files;
+import java.util.HashMap;
+import java.util.Map;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.core.io.ByteArrayResource;
+import org.springframework.core.io.Resource;
+import org.springframework.stereotype.Service;
+import org.xhtmlrenderer.pdf.ITextRenderer;
+
+import com.itextpdf.html2pdf.HtmlConverter;
+import com.itextpdf.text.DocumentException;
+import com.southern.cmps.dao.CmpsDao;
+import com.southern.cmps.domain.Concentration;
+import com.southern.cmps.domain.Student;
+import com.southern.cmps.domain.StudentBalanceSheetInfo;
+import com.southern.cmps.service.CmpsService;
+import com.southern.cmps.service.exception.CmpsException;
+import com.southern.cmps.util.UtilValidate;
+
+import freemarker.cache.FileTemplateLoader;
+import freemarker.template.Configuration;
+import freemarker.template.Template;
+import freemarker.template.TemplateExceptionHandler;
+
+@Service
+public class CmpsServiceImpl implements CmpsService{
+	
+	private static final Configuration configuration = new Configuration(Configuration.VERSION_2_3_22);
+
+	  static {
+	    configuration.setDefaultEncoding("UTF-8");
+	    configuration.setTemplateExceptionHandler(TemplateExceptionHandler.RETHROW_HANDLER);
+	    configuration.setIncompatibleImprovements(Configuration.VERSION_2_3_22);
+
+	  }
+	
+	@Autowired
+	private CmpsDao cmpsDaoImpl;
+	
+	@Override
+	public Student getStudentDetail(String uNumber) throws CmpsException {
+		if(UtilValidate.isEmpty(uNumber)) {
+			throw new CmpsException("Invalid UNumber");
+		}
+		Student student = cmpsDaoImpl.getStudentDetail(uNumber);
+		if(UtilValidate.isEmpty(student)) {
+			throw new CmpsException("Invalid Student Information");
+		}
+		return student;
+	}
+	
+	@Override
+	public Map<Integer, Concentration> getConcentrations() throws CmpsException {
+		Map<Integer, Concentration> concentrations = cmpsDaoImpl.getConcentrations();
+		if (UtilValidate.isEmpty(concentrations)) {
+			throw new CmpsException("Invalid Concentrations");
+		}
+		return concentrations;
+	}
+	
+	@Override
+	public StudentBalanceSheetInfo getStudentBalanceSheetInfo(String uNumber) throws CmpsException {
+		Student student = getStudentDetail(uNumber);
+		Map<Integer, Concentration> concentrations = getConcentrations();
+		StudentBalanceSheetInfo info = new StudentBalanceSheetInfo();
+		info.setFirstName(student.getFirstName());
+		info.setUNumber(student.getUNumber());
+		info.setConcentrationsInfo(concentrations);
+		return info;
+	}
+	
+//	public static File writeToFile(String templatePath, String templateName, Map<String, String> map, String filePath, String fileName) throws Exception {
+//		InputStream pdfTemplateInputStream = new FileInputStream("templates/ftl/student-balance-sheet.ftl");
+//		
+//		PdfReader pdfTemplate = new PdfReader(pdfTemplateInputStream);
+//		ByteArrayOutputStream out = new ByteArrayOutputStream();
+//		PdfStamper stamper = new PdfStamper(pdfTemplate, out);
+//		stamper.setFormFlattening(true);
+//		
+//		for (String key: map.keySet()) {
+//			stamper.getAcroFields().setField(key, map.get(key));
+//		}
+//		
+//		stamper.close();
+//		pdfTemplate.close();
+//		
+//		File file = new File("conf/Common/Report.pdf");
+//		FileOutputStream fos = new FileOutputStream(file);
+//		
+//		fos.write(out.toByteArray());
+//		fos.close();
+//		
+//		return file;
+//	}
+	
+	public static Resource writeToFile(String templateName, Map<String, String> map) throws Exception {		
+			FileTemplateLoader templateLoader = new FileTemplateLoader(new File("/Users/dr.sudhir_trivedi/eclipse-workspace/cmps/cmpsWeb/src/main/resources/templates"));
+		    configuration.setTemplateLoader(templateLoader);
+	    map.put("studentInfo","info");
+		StringWriter strWriter = new StringWriter();  
+		Template template = configuration.getTemplate(templateName);
+	    template.process(map, strWriter);
+//	    strWriter.toString();
+//		File file = new File("/Users/dr.sudhir_trivedi/Documents/textFile.pdf");
+//		FileOutputStream fos = new FileOutputStream(file);
+//		fos.write(strWriter.toString().getBytes());
+//		fos.close();
+//		
+        try {
+            // Output file where the PDF will be saved
+            File outputFile = new File("/Users/dr.sudhir_trivedi/Downloads/TOC_U01996353.pdf");
+
+            OutputStream os = new FileOutputStream(outputFile);
+            ITextRenderer renderer = new ITextRenderer();
+            renderer.setDocumentFromString(strWriter.toString());
+            renderer.layout();
+            renderer.createPDF(os, true);
+            renderer.finishPDF();
+            os.close();
+
+            System.out.println("PDF generated successfully.");
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+	    
+//		File file2 = new File("/Users/dr.sudhir_trivedi/Downloads/TOC_U01996353.pdf");
+//	    HtmlConverter.convertToPdf(strWriter.toString(), new FileOutputStream(file2));
+
+		return new ByteArrayResource(Files.readAllBytes(file2.toPath()));
+    }
+	
+	public static void main(String args[]) throws Exception {
+		System.out.println(writeToFile("student-balance-sheet.ftl", new HashMap<String,String>()).toString());
+	}
+	
+//	public static <T> ByteString serialize(final String templateName, T object) {
+//	    StringWriter templateResults = new StringWriter();
+//	    try {
+//	      Template template = configuration.getTemplate(templateName);
+//	      template.process(object, templateResults);
+//	    } catch (Exception e) {
+//	      throw Throwables.propagate(e);
+//	    }
+//	    return ByteString.encodeUtf8(templateResults.toString());
+//	  }
+
+}

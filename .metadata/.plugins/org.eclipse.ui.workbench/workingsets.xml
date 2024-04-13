@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<workingSetManager>
+<workingSet editPageId="org.eclipse.jdt.internal.ui.DynamicSourcesWorkingSet" factoryID="org.eclipse.ui.internal.WorkingSetFactory" id="1693931209222_0" label="Java Main Sources" name="Java Main Sources"/>
+<workingSet editPageId="org.eclipse.jdt.internal.ui.DynamicSourcesWorkingSet" factoryID="org.eclipse.ui.internal.WorkingSetFactory" id="1693931209247_1" label="Java Test Sources" name="Java Test Sources"/>
+<workingSet editPageId="org.eclipse.ui.resourceWorkingSetPage" factoryID="org.eclipse.ui.internal.WorkingSetFactory" id="1694230402675_3" label="cmps" name="cmps">
+<item factoryID="org.eclipse.ui.internal.model.ResourceFactory" path="/cmps" type="4"/>
+<item factoryID="org.eclipse.ui.internal.model.ResourceFactory" path="/cmpsUI" type="4"/>
+<item factoryID="org.eclipse.ui.internal.model.ResourceFactory" path="/cmpsWeb" type="4"/>
+</workingSet>
+<workingSet editPageId="org.eclipse.ui.resourceWorkingSetPage" factoryID="org.eclipse.ui.internal.WorkingSetFactory" id="1696289416790_4" label="diagnostics-parent" name="diagnostics-parent">
+<item factoryID="org.eclipse.ui.internal.model.ResourceFactory" path="/diagnostics-parent" type="4"/>
+<item factoryID="org.eclipse.ui.internal.model.ResourceFactory" path="/diagnostics-ui" type="4"/>
+<item factoryID="org.eclipse.ui.internal.model.ResourceFactory" path="/diagnostics" type="4"/>
+</workingSet>
+<workingSet aggregate="true" factoryID="org.eclipse.ui.internal.WorkingSetFactory" id="1693931214650_2" label="Window Working Set" name="Aggregate for window 1693931214649"/>
+</workingSetManager>

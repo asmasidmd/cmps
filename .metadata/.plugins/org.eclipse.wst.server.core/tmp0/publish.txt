@@ -1,0 +1,5 @@
+#Tomcat publish data
+#Wed Nov 08 15:19:06 CST 2023
+org.eclipse.jst.j2ee.server\:cmps-service=WEB-INF/lib/cmps-service-0.0.1-SNAPSHOT.jar
+org.eclipse.jst.jee.server\:/binary\:/Users/dr.sudhir_trivedi/.m2/repository/org/springframework/spring-web/5.3.29/spring-web-5.3.29.jar=WEB-INF/lib/spring-web-5.3.29.jar
+org.eclipse.jst.j2ee.server\:cmps-core=WEB-INF/lib/cmps-core-0.0.1-SNAPSHOT.jar

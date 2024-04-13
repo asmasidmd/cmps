@@ -1,0 +1,72 @@
+<!DOCTYPE html [
+    <!ENTITY nbsp "&#160;"> 
+]>
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    </meta>
+    <#include "styles.css">
+   <style>
+	      @page {
+            margin-top: 7.4cm;
+            margin-bottom: 2.5cm;
+            
+            @top-center {
+                content: element(header);
+            }
+
+            @bottom-center {
+                content: element(footer);
+            }
+        }
+
+        .header {
+            position: running(header);
+        }
+
+        .footer {
+            position: running(footer);
+        }
+   </style>
+</head>
+
+<body>
+
+<div class="header width-100 height-100">
+    <table class="margin-b-10 width-100">
+      <b>Southern University Department of Computer Science</b>
+      <tr>
+      <b>Bachelor of Science in Computer Science</b>
+      </tr>
+      <tr>
+      <b>2018-2021 Balance Sheet</b>
+      </tr>
+      <tr>
+      <td>
+      STUDENT NAME_____________
+      </td>
+      <td>
+      ADVISOR______________
+      </td>
+      </tr>
+      <tr>
+      CONCENTRATION :
+      <td>
+        Cybersecurity <input class="form-check-input" type="checkbox" value="" />
+      </td>
+            <td>
+        Information Systems <input type="checkbox" value="" />
+      </td>
+            <td>
+        Scientific <input type="checkbox" value="" />
+      </td>
+            <td>
+        Mobile <input type="checkbox" value="" />
+      </td>
+      </tr>
+   </table>
+</div>
+
+</body>
+</html>

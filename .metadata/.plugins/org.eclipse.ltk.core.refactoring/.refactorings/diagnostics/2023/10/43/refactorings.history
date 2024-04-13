@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Copy element &apos;css&apos; to &apos;cmpsWeb/src/main/resources/templates.ftl&apos;&#x0A;- Original project: &apos;diagnostics&apos;&#x0A;- Destination element: &apos;cmpsWeb/src/main/resources/templates.ftl&apos;&#x0A;- Original element: &apos;css&apos;" description="Copy folder" destination="=cmpsWeb/src\/main\/resources&lt;templates.ftl" element1="src/main/resources/templates/ftl/css" files="0" flags="589830" folders="1" id="org.eclipse.jdt.ui.copy" policy="org.eclipse.jdt.ui.copyResources" stamp="1698436499291" units="0" version="1.0"/>
+</session>

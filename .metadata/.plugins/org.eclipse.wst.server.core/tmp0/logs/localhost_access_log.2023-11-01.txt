@@ -1,0 +1,9 @@
+127.0.0.1 - - [01/Nov/2023:10:45:13 -0500] "GET /cmpsWeb/student/concentrations HTTP/1.1" 200 6674
+127.0.0.1 - - [01/Nov/2023:10:45:13 -0500] "GET /cmpsWeb/student/getStudentDetail?uNumber=U01996353 HTTP/1.1" 200 881
+127.0.0.1 - - [01/Nov/2023:10:45:18 -0500] "GET /cmpsWeb/student/report-download-url HTTP/1.1" 200 1685
+127.0.0.1 - - [01/Nov/2023:10:47:41 -0500] "GET /cmpsWeb/student/report-download-url HTTP/1.1" 200 1685
+127.0.0.1 - - [01/Nov/2023:10:49:04 -0500] "GET /cmpsWeb/student/report-download-url HTTP/1.1" 200 1705
+127.0.0.1 - - [01/Nov/2023:10:53:43 -0500] "GET /cmpsWeb/student/report-download-url HTTP/1.1" 200 1734
+127.0.0.1 - - [01/Nov/2023:10:57:35 -0500] "GET /cmpsWeb/student/report-download-url HTTP/1.1" 200 1768
+127.0.0.1 - - [01/Nov/2023:10:58:57 -0500] "GET /cmpsWeb/student/report-download-url HTTP/1.1" 200 1768
+127.0.0.1 - - [01/Nov/2023:11:06:49 -0500] "GET /cmpsWeb/student/report-download-url HTTP/1.1" 200 1761

@@ -1,0 +1,53 @@
+package com.southern.cmps.service.impl;
+
+import java.util.Map;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+
+import com.southern.cmps.dao.CmpsDao;
+import com.southern.cmps.domain.Concentration;
+import com.southern.cmps.domain.Student;
+import com.southern.cmps.domain.StudentBalanceSheetInfo;
+import com.southern.cmps.service.CmpsService;
+import com.southern.cmps.service.exception.CmpsException;
+import com.southern.cmps.util.UtilValidate;
+
+@Service
+public class CmpsServiceImpl implements CmpsService{
+	
+	@Autowired
+	private CmpsDao cmpsDaoImpl;
+	
+	@Override
+	public Student getStudentDetail(String uNumber) throws CmpsException {
+		if(UtilValidate.isEmpty(uNumber)) {
+			throw new CmpsException("Invalid UNumber");
+		}
+		Student student = cmpsDaoImpl.getStudentDetail(uNumber);
+		if(UtilValidate.isEmpty(student)) {
+			throw new CmpsException("Invalid Student Information");
+		}
+		return student;
+	}
+	
+	@Override
+	public Map<Integer, Concentration> getConcentrations() throws CmpsException {
+		Map<Integer, Concentration> concentrations = cmpsDaoImpl.getConcentrations();
+		if (UtilValidate.isEmpty(concentrations)) {
+			throw new CmpsException("Invalid Concentrations");
+		}
+		return concentrations;
+	}
+	
+	public StudentBalanceSheetInfo getStudentBalanceSheetInfo(String uNumber) throws CmpsException {
+		Student student = getStudentDetail(uNumber);
+		Map<Integer, Concentration> concentrations = getConcentrations();
+		StudentBalanceSheetInfo info = new StudentBalanceSheetInfo();
+		info.setFirstName(student.getFirstName());
+		info.setUNumber(student.getUNumber());
+		info.setConcentrationsInfo(concentrations);
+		return info;
+	}
+
+}

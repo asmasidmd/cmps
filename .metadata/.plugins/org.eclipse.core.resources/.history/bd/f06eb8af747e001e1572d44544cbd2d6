@@ -1,0 +1,32 @@
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    </meta>
+    <#include "styles.css">
+   <style>
+   </style>
+</head>
+
+<body>
+    <table class="margin-b-10 width-100">
+      <tr class="text-center">
+      <b>Southern University Department of Computer Science</b>
+      </tr>
+      <tr class="text-center">
+      <b>Bachelor of Science in Computer Science</b>
+      </tr>
+      <tr class="text-center">
+      <b>2018-2021 Balance Sheet</b>
+      </tr>
+      <tr >
+      <td width="50%" class="text-center">
+      STUDENT NAME_____________
+      </td>
+      <td width="50%" class="text-center">
+      ADVISOR______________
+      </td>
+      </tr>
+   </table>
+</body>
+</html>
